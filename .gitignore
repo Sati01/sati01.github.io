@@ -1,0 +1,10 @@
+# Private notes: kept locally, never published
+Portfolio_Notes.md
+
+# OS and editor clutter
+desktop.ini
+Thumbs.db
+.DS_Store
+.vscode/
+*.tmp
+~$*
