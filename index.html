@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Satish Chandra Pamulapati · ML Engineer, Computer Vision &amp; LLMs</title>
+  <meta name="description" content="Machine learning engineer in Lund, Sweden, building computer vision and LLM systems: chicken behavior detection, event-camera insect wing tracking, OCR for 400-year-old documents, RAG and text-to-SQL. MSc student at Lund University, ML Specialist at Kolomolo AB.">
+  <meta name="author" content="Satish Chandra Pamulapati">
+  <link rel="canonical" href="https://sati01.github.io/">
+  <meta name="theme-color" content="#0a0e13">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Satish Chandra Pamulapati">
+  <meta property="og:title" content="Satish Chandra Pamulapati · ML Engineer, Computer Vision &amp; LLMs">
+  <meta property="og:description" content="Computer vision and LLM systems, from messy real-world data to reliable pipelines. MSc Machine Learning Systems and Control, Lund University.">
+  <meta property="og:url" content="https://sati01.github.io/">
+  <meta property="og:image" content="https://sati01.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Satish Chandra Pamulapati, ML Engineer, Computer Vision and LLMs, Lund, Sweden">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Satish Chandra Pamulapati",
+    "url": "https://sati01.github.io/",
+    "jobTitle": "Machine Learning Engineer",
+    "email": "mailto:pamulapati06@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Lund", "addressCountry": "SE" },
+    "worksFor": { "@type": "Organization", "name": "Kolomolo AB" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Lund University" },
+      { "@type": "CollegeOrUniversity", "name": "SRM Institute of Science and Technology" }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/satish-chandra-pamulapati",
+      "https://github.com/Sati01"
+    ],
+    "knowsAbout": ["Computer vision", "Animal behavior detection", "Machine learning", "Large language models", "Retrieval-augmented generation", "OCR", "Pose estimation", "Event-based vision", "Text-to-SQL"]
+  }
+  </script>
+</head>
+<body data-focus="all">
+<script>
+  /* Set the lens before first paint so there is no flash of the wrong content. */
+  (function () {
+    document.documentElement.classList.remove('no-js');
+    var f = new URLSearchParams(location.search).get('focus');
+    if (f === 'vision' || f === 'llm') document.body.setAttribute('data-focus', f);
+  })();
+</script>
+
+<!-- Icon sprite (Lucide, ISC licence; Tabler brand icons, MIT licence) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></symbol>
+    <symbol id="i-present" viewBox="0 0 24 24"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M16 16v-3a2 2 0 1 0 -4 0"/><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top" aria-label="Satish Chandra Pamulapati, back to top">
+      <span class="brand-mark" aria-hidden="true">SC</span>
+      <span class="brand-name">Satish Chandra Pamulapati</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="lens" role="group" aria-label="Choose a focus">
+      <button type="button" data-lens-btn="all" aria-pressed="true">All</button>
+      <button type="button" data-lens-btn="vision" aria-pressed="false">Vision</button>
+      <button type="button" data-lens-btn="llm" aria-pressed="false">LLM &amp; Data</button>
+    </div>
+  </div>
+</header>
+<p class="sr-only" aria-live="polite" id="lens-status"></p>
+
+<main id="main">
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <!-- Add a photo: save it as assets/img/headshot.jpg (square, 600×600 or larger). It appears automatically. -->
+        <div class="avatar">
+          <span aria-hidden="true">SC</span>
+          <img src="assets/img/headshot.jpg" alt="Portrait of Satish Chandra Pamulapati" width="84" height="84">
+        </div>
+
+        <p class="eyebrow mono"><span class="prompt">~/lund</span> $ whoami</p>
+        <h1>Satish Chandra Pamulapati</h1>
+        <p class="role mono">
+          <span data-only="all">Machine Learning Engineer · Computer Vision &amp; LLMs</span>
+          <span data-only="vision">Computer Vision &amp; Machine Learning Engineer</span>
+          <span data-only="llm">Machine Learning Engineer · LLMs &amp; Data</span>
+        </p>
+
+        <p class="lede" data-only="all">I build <strong>computer vision</strong> and <strong>LLM</strong> systems that work on messy, real-world data. I take them from a first prototype to a pipeline people can rely on: data preparation, training, evaluation and integration.</p>
+        <p class="lede" data-only="vision">I build <strong>computer vision</strong> systems for detection, OCR, image restoration, behavior analysis, pose estimation and event-based tracking. I take them from a prototype to a reliable pipeline: data preparation, training, evaluation and integration code.</p>
+        <p class="lede" data-only="llm">I build <strong>LLM and data workflows</strong>, including RAG, text-to-SQL and structured summarization, that turn messy inputs into clear outputs stakeholders can act on.</p>
+
+        <p class="status"><span class="dot" aria-hidden="true"></span>Open to ML roles, part-time work, 2027 thesis &amp; research</p>
+
+        <div class="cta">
+          <a class="btn btn-primary" data-only="all" href="assets/cv/Satish_Chandra_Pamulapati_CV_Computer_Vision.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>CV · Computer Vision
+          </a>
+          <a class="btn" data-only="all" href="assets/cv/Satish_Chandra_Pamulapati_CV_ML_LLM.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>CV · ML &amp; LLM
+          </a>
+          <a class="btn btn-primary" data-only="vision" href="assets/cv/Satish_Chandra_Pamulapati_CV_Computer_Vision.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download CV
+          </a>
+          <a class="btn btn-primary" data-only="llm" href="assets/cv/Satish_Chandra_Pamulapati_CV_ML_LLM.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download CV
+          </a>
+          <a class="btn btn-ghost" href="mailto:pamulapati06@gmail.com">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/satish-chandra-pamulapati" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/Sati01" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub
+          </a>
+        </div>
+        <p class="location"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Lund, Sweden</p>
+      </div>
+
+      <figure class="term" aria-label="Current status">
+        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><b>now.json</b></div>
+<pre><code><span class="p">{</span>
+  <span class="k">"role"</span><span class="p">:</span> <span class="s">"ML Specialist @ Kolomolo AB"</span><span class="p">,</span>
+  <span class="k">"study"</span><span class="p">:</span> <span class="s">"MSc ML, Lund University"</span><span class="p">,</span>
+  <span class="k">"research"</span><span class="p">:</span> <span class="s">"insect flight tracking"</span><span class="p">,</span>
+  <span class="k">"lab"</span><span class="p">:</span> <span class="s">"Lund Vision Group"</span><span class="p">,</span>
+  <span class="k">"focus"</span><span class="p">:</span> <span data-only="all"><span class="p">[</span><span class="s">"vision"</span><span class="p">,</span> <span class="s">"llm"</span><span class="p">]</span></span><span data-only="vision"><span class="s">"computer vision"</span></span><span data-only="llm"><span class="s">"llm + data"</span></span><span class="p">,</span>
+  <span class="k">"open_to"</span><span class="p">:</span> <span class="p">[</span><span class="s">"full-time"</span><span class="p">,</span> <span class="s">"part-time"</span><span class="p">,</span>
+              <span class="s">"thesis-2027"</span><span class="p">,</span> <span class="s">"research"</span><span class="p">]</span>
+<span class="p">}</span></code></pre>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================== HIGHLIGHTS ============================== -->
+  <div class="wrap stats">
+    <ul class="stats-grid" aria-label="Highlights">
+      <li class="stat" data-only="all llm"><strong>2 pilots</strong><span>turned into long-term production contracts with my ML proofs-of-concept</span></li>
+      <li class="stat" data-only="all vision"><strong>400 yrs</strong><span>age of the historical documents my OCR pipeline reads</span></li>
+      <li class="stat" data-only="all vision"><strong>5 + 1</strong><span>synchronized frame cameras plus an event camera in my research rig</span></li>
+      <li class="stat" data-only="all llm"><strong>3</strong><span>publications on IEEE Xplore</span></li>
+      <li class="stat" data-only="vision"><strong>88%</strong><span>accuracy on real vs. synthetic media (deepfake detection)</span></li>
+      <li class="stat" data-only="vision"><strong>~85%</strong><span>accuracy for real-time YOLOv7 classroom monitoring</span></li>
+      <li class="stat" data-only="llm"><strong>P0–P3</strong><span>prioritization scheme I designed for LLM review triage</span></li>
+      <li class="stat" data-only="llm"><strong>4</strong><span>LLM pipelines built: RAG, text-to-SQL, summarization, review triage</span></li>
+    </ul>
+  </div>
+
+  <!-- ============================== WORK ============================== -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker mono">01 / work</p>
+        <h2>Selected work</h2>
+        <p class="section-sub" data-only="all">Vision and language projects from research, industry and university.</p>
+        <p class="section-sub" data-only="vision">Detection, behavior analysis, OCR, restoration, pose and event-based tracking.</p>
+        <p class="section-sub" data-only="llm">RAG, text-to-SQL, summarization, automated data analysis and the document pipelines that feed them.</p>
+      </header>
+
+      <div class="projects" data-projects>
+
+        <!-- Insect wing tracking -->
+        <article class="project is-featured" id="insect-tracking" data-only="all vision" data-order="all:1 vision:1" data-featured="all vision">
+          <figure class="project-media">
+            <picture>
+              <source srcset="assets/img/insect-rig.webp" type="image/webp">
+              <img src="assets/img/insect-rig.jpg" width="630" height="840" loading="lazy" alt="Lab capture rig: several machine-vision cameras on 3D-printed mounts around an optical table, wired to a microcontroller trigger board.">
+            </picture>
+            <figcaption>The capture rig in the lab</figcaption>
+          </figure>
+          <div class="project-body">
+            <p class="meta"><span>Research · Lund Vision Group, Lund University</span><span class="tag tag-vision">vision</span><span class="tag tag-live">ongoing</span></p>
+            <h3>Multi-kilohertz insect wing tracking with event cameras</h3>
+            <p>Tracking insect wingtips at kilohertz rates by combining a synchronized high-speed camera rig with an event camera. It's part of my research in the Lund Vision Group on 3D keypoint tracking and 3D flight-path estimation for insects.</p>
+            <ul class="points">
+              <li>Synchronized <strong>five frame-based cameras</strong> with a microcontroller trigger, alongside an event camera.</li>
+              <li>Generated pseudo-ground-truth 2D wingtip labels with a pretrained <strong>SLEAP</strong> pose-estimation model.</li>
+              <li>Aligned the event data with the keypoint labels in time, and trained a lightweight network to predict wingtip coordinates directly from events.</li>
+              <li>The model recovers high-frequency wing-motion patterns from event data. This lays the groundwork for low-latency, real-time, closed-loop tracking.</li>
+            </ul>
+            <ul class="chips" aria-label="Techniques">
+              <li>Event cameras</li><li>SLEAP</li><li>Multi-camera sync</li><li>Sensor fusion</li><li>Keypoint regression</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Kolomolo: flock behavior -->
+        <article class="project" data-only="all vision" data-order="all:2 vision:2">
+          <div class="project-body">
+            <p class="meta"><span>Kolomolo AB · 2026</span><span class="tag tag-vision">vision</span><span class="tag tag-live">ongoing</span></p>
+            <h3>Chicken behavior detection in poultry flocks</h3>
+            <p>Computer vision that detects <strong>chicken behavior in poultry flocks</strong> from how the birds move over time.</p>
+            <ul class="chips" aria-label="Techniques"><li>Behavior recognition</li><li>Movement analysis</li><li>Video</li><li>Animal monitoring</li></ul>
+          </div>
+        </article>
+
+        <!-- Review summarizer -->
+        <article class="project" data-only="all llm" data-order="all:3 llm:1" data-featured="llm">
+          <figure class="project-media project-media--code" aria-label="Illustrative output format">
+<pre><span class="c">// example output (illustrative)</span>
+<span class="p">{</span>
+  <span class="k">"priority"</span><span class="p">:</span> <span class="s">"P0"</span><span class="p">,</span>
+  <span class="k">"category"</span><span class="p">:</span> <span class="s">"bug · checkout"</span><span class="p">,</span>
+  <span class="k">"summary"</span><span class="p">:</span> <span class="s">"Payment fails after update"</span><span class="p">,</span>
+  <span class="k">"examples"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Can't pay since v2.3"</span><span class="p">,</span> <span class="s">"…"</span><span class="p">],</span>
+  <span class="k">"next_action"</span><span class="p">:</span> <span class="s">"Escalate to payments"</span>
+<span class="p">}</span></pre>
+          </figure>
+          <div class="project-body">
+            <p class="meta"><span>Zelar · 2024–25</span><span class="tag tag-llm">llm</span></p>
+            <h3>AI review summarizer &amp; priority dashboard</h3>
+            <p>An LLM pipeline that turns high-volume user feedback into structured, prioritized insight that non-technical stakeholders can plan from.</p>
+            <ul class="points">
+              <li>Designed a four-level <strong>P0–P3 priority scheme</strong> that surfaces critical bugs, recurring issues and feature requests by urgency and impact.</li>
+              <li>Generated dashboard-ready output for each issue: category, short summary, representative examples and a recommended next action.</li>
+              <li>Iterated on prompt templates and output schemas so prioritization stays stable across very different writing styles.</li>
+            </ul>
+            <ul class="chips" aria-label="Techniques">
+              <li>LLMs</li><li>Prompt engineering</li><li>Output schemas</li><li>Prioritization</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- OCR -->
+        <article class="project" data-only="all vision llm" data-order="all:4 vision:3 llm:5">
+          <div class="project-body">
+            <p class="meta"><span>Zelar · 2024–25</span><span class="tag tag-vision">vision</span></p>
+            <h3>OCR for 400-year-old historical documents</h3>
+            <p>Getting usable text out of noisy, degraded scans where standard OCR fails.</p>
+            <ul class="points">
+              <li>Built and improved OCR pipelines that combine preprocessing with model-based text extraction.</li>
+              <li>Added image-restoration steps (denoising, deblurring and artifact cleanup) before OCR to <strong>raise quality and cut failure cases</strong>.</li>
+            </ul>
+            <ul class="chips" aria-label="Techniques"><li>OCR</li><li>Denoising</li><li>Deblurring</li><li>Document AI</li></ul>
+          </div>
+        </article>
+
+        <!-- RAG -->
+        <article class="project" data-only="all llm" data-order="all:5 llm:2">
+          <div class="project-body">
+            <p class="meta"><span>Zelar · 2024–25</span><span class="tag tag-llm">llm</span></p>
+            <h3>RAG &amp; report summarization</h3>
+            <p>End-to-end retrieval-augmented generation for document understanding, plus pipelines that condense long reports and feedback into concise, structured summaries for faster decisions.</p>
+            <ul class="points">
+              <li>Built RAG workflows with LLMs for document understanding and report summarization.</li>
+              <li>Iterated on prompt structure and evaluation to <strong>reduce noise and keep summaries consistent</strong> across varied inputs.</li>
+            </ul>
+            <ul class="chips" aria-label="Techniques"><li>RAG</li><li>LLMs</li><li>Summarization</li><li>Evaluation</li></ul>
+          </div>
+        </article>
+
+        <!-- Text-to-SQL -->
+        <article class="project" data-only="all llm" data-order="all:6 llm:3">
+          <div class="project-body">
+            <p class="meta"><span>Zelar · 2024–25</span><span class="tag tag-llm">llm</span></p>
+            <h3>Text-to-SQL assistant</h3>
+            <p>A proof-of-concept that lets non-technical users query data in plain language: an LLM translates each request into SQL.</p>
+            <ul class="points">
+              <li>Refined prompts and logic iteratively for <strong>reliable query generation</strong>.</li>
+              <li>Designed for non-technical users, with a simple interaction flow and clear, readable results.</li>
+            </ul>
+            <ul class="chips" aria-label="Techniques"><li>LLMs</li><li>SQL</li><li>Prompt engineering</li></ul>
+          </div>
+        </article>
+
+        <!-- Pose -->
+        <article class="project" data-only="all vision" data-order="all:7 vision:4">
+          <div class="project-body">
+            <p class="meta"><span>Zelar · 2024–25</span><span class="tag tag-vision">vision</span></p>
+            <h3>Abnormal movement detection from 3D pose</h3>
+            <p>A vision-based human movement analysis system that uses 3D pose classification to flag abnormal and behavior-related movement patterns.</p>
+            <ul class="chips" aria-label="Techniques"><li>3D pose</li><li>Classification</li><li>Video analysis</li></ul>
+          </div>
+        </article>
+
+        <!-- Hackathon: dataset analyser -->
+        <article class="project" data-only="all llm" data-order="all:8 llm:4">
+          <div class="project-body">
+            <p class="meta"><span>Lund AI Hackathon</span><span class="tag tag-llm">data</span></p>
+            <h3>Automated dataset analyser</h3>
+            <p>A proof-of-concept that analyses a dataset automatically and reports its <strong>key insights and limitations</strong>, so you can judge a dataset before building on it.</p>
+            <ul class="chips" aria-label="Techniques"><li>Automated data analysis</li><li>Data quality</li><li>React</li><li>TypeScript</li></ul>
+            <a class="project-link" href="https://github.com/Sati01/analysts_lundaihackathon" target="_blank" rel="noopener">View the code <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <!-- Redaction -->
+        <article class="project" data-only="all vision llm" data-order="all:9 vision:5 llm:6">
+          <div class="project-body">
+            <p class="meta"><span>Zelar · 2024–25</span><span class="tag tag-vision">vision</span></p>
+            <h3>Automated document redaction</h3>
+            <p>A pipeline that automatically detects and masks sensitive content in documents, as part of a larger document-processing workflow.</p>
+            <ul class="chips" aria-label="Techniques"><li>Detection</li><li>Document AI</li><li>Privacy</li></ul>
+          </div>
+        </article>
+
+        <!-- YOLOv7 -->
+        <article class="project" data-only="all vision" data-order="all:10 vision:6">
+          <div class="project-body">
+            <p class="meta"><span>University · 2022–23</span><span class="tag tag-vision">vision</span><span class="tag tag-pub">IEEE</span></p>
+            <h3>Smart attendance &amp; classroom monitoring</h3>
+            <p>Real-time classroom monitoring with a fine-tuned <strong>YOLOv7</strong> detector, published on IEEE Xplore.</p>
+            <ul class="points">
+              <li>Trained and fine-tuned the detector, leading the accuracy and stability experiments, and reached <strong>~85% accuracy</strong>.</li>
+              <li>Logged entry and exit events with timestamps for attendance, and added a module that flags inactivity and sleeping.</li>
+              <li>Stored inference outputs and attendance logs in a database for reporting.</li>
+            </ul>
+            <ul class="chips" aria-label="Techniques"><li>YOLOv7</li><li>Real-time detection</li><li>Database</li></ul>
+            <a class="project-link" href="https://ieeexplore.ieee.org/document/10170486" target="_blank" rel="noopener">Read the paper <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <!-- Deepfake -->
+        <article class="project" data-only="all vision" data-order="all:11 vision:7">
+          <div class="project-body">
+            <p class="meta"><span>University · 2023</span><span class="tag tag-vision">vision</span></p>
+            <h3>Deepfake detection with a custom CNN</h3>
+            <p>Designed, trained and optimized a custom CNN that separates real from synthetic media with <strong>88% accuracy</strong>.</p>
+            <ul class="points">
+              <li>Coordinated a five-person team and structured the experiments.</li>
+              <li>Improved generalization through iterative feature extraction and tuning.</li>
+            </ul>
+            <ul class="chips" aria-label="Techniques"><li>Custom CNN</li><li>Classification</li><li>Team lead</li></ul>
+          </div>
+        </article>
+
+        <!-- Super-resolution -->
+        <article class="project" data-only="all vision" data-order="all:12 vision:8">
+          <div class="project-body">
+            <p class="meta"><span>University · 2022</span><span class="tag tag-vision">vision</span></p>
+            <h3>Image restoration via super-resolution</h3>
+            <p>Implemented super-resolution methods to restore degraded images, compared the results with SSIM and MSE, and tracked every experiment.</p>
+            <ul class="chips" aria-label="Techniques"><li>Super-resolution</li><li>SSIM / MSE</li><li>Experiment tracking</li></ul>
+          </div>
+        </article>
+
+        <!-- GPT-2 -->
+        <article class="project" data-only="all llm" data-order="all:13 llm:7">
+          <div class="project-body">
+            <p class="meta"><span>University · 2022</span><span class="tag tag-llm">llm</span></p>
+            <h3>Video description generation with GPT-2</h3>
+            <p>An NLP application that generates YouTube video descriptions from tags, focused on semantic alignment and relevance. It reached <strong>85% accuracy</strong> in a structured evaluation on a tag-to-text dataset.</p>
+            <ul class="chips" aria-label="Techniques"><li>GPT-2</li><li>NLP</li><li>Text generation</li></ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="more-wrap">
+        <button type="button" class="btn btn-more" data-more hidden aria-expanded="false">Show more projects</button>
+      </div>
+
+      <!-- GitHub -->
+      <div class="subhead">
+        <h3>On GitHub</h3>
+        <a href="https://github.com/Sati01?tab=repositories" target="_blank" rel="noopener">All repositories <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <ul class="repos">
+        <li class="repo" data-only="all llm">
+          <a href="https://github.com/Sati01/Language_Translator_Small" target="_blank" rel="noopener">
+            <span class="repo-name"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Language_Translator_Small</span>
+            <p>Swedish → English translator built on a character-level Transformer encoder–decoder, served as a Gradio app.</p>
+            <span class="lang">Python · PyTorch · Gradio</span>
+          </a>
+        </li>
+        <li class="repo" data-only="all vision llm">
+          <a href="https://github.com/Sati01/Image_Url_captions" target="_blank" rel="noopener">
+            <span class="repo-name"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Image_Url_captions</span>
+            <p>Give it an image URL and it returns a caption and the sentiment, using Hugging Face models in a Streamlit app.</p>
+            <span class="lang">Python · Hugging Face · Streamlit</span>
+          </a>
+        </li>
+        <li class="repo" data-only="all vision llm">
+          <a href="https://github.com/Sati01/Linear_Regression_Implementation_Numpy" target="_blank" rel="noopener">
+            <span class="repo-name"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Linear_Regression_Implementation_Numpy</span>
+            <p>Linear regression implemented from scratch in NumPy.</p>
+            <span class="lang">Python · NumPy</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== EXPERIENCE ============================== -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker mono">02 / experience</p>
+        <h2>Experience</h2>
+      </header>
+      <ol class="timeline">
+        <li class="job">
+          <div class="job-when">Jun 2026 – present<br><span class="tag tag-live now">current</span></div>
+          <div>
+            <h3>Machine Learning Specialist <span class="at">@</span> <span class="org">Kolomolo AB</span></h3>
+            <p class="job-sub">Contract · Sweden</p>
+            <ul>
+              <li>Building computer vision that detects <strong>chicken behavior in poultry flocks</strong> from movement patterns over time.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">Sep 2024 – Aug 2025</div>
+          <div>
+            <h3>Associate Data Analyst / ML Intern <span class="at">@</span> <span class="org">Zelar</span></h3>
+            <ul>
+              <li>Delivered ML proofs-of-concept that helped turn <strong>2 client pilots into long-term production contracts</strong>.</li>
+              <li data-only="all">Built OCR, image-restoration and automated-redaction pipelines for degraded and sensitive documents, including 400-year-old scans.</li>
+              <li data-only="all">Built LLM workflows: RAG, text-to-SQL, report summarization and a P0–P3 review-triage pipeline.</li>
+              <li data-only="vision">Built and improved OCR pipelines for 400-year-old historical documents, with restoration steps (denoising, deblurring, artifact cleanup) that reduced failure cases.</li>
+              <li data-only="vision">Developed an image-redaction pipeline that automatically detects and masks sensitive content in documents.</li>
+              <li data-only="llm">Built end-to-end RAG workflows with LLMs for document understanding and report summarization.</li>
+              <li data-only="llm">Built a text-to-SQL proof-of-concept and an LLM review-triage pipeline with P0–P3 prioritization.</li>
+              <li data-only="llm">Developed image-restoration and automated-redaction steps for document-processing pipelines.</li>
+              <li>Built a 3D pose-classification system for detecting abnormal movement.</li>
+              <li data-only="vision">Built LLM tools for summarization and structured extraction where needed, so outputs were easier to review and act on.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">Jul 2023 – Apr 2024</div>
+          <div>
+            <h3>AI Fellow <span class="at">@</span> <span class="org">Metapix</span></h3>
+            <p class="job-sub">Fellowship</p>
+            <ul>
+              <li>Worked on facial enhancement and gesture recognition using CNN-based feature extraction and transfer learning, and supported real-time video-processing workflows.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">May 2022 – Jul 2022</div>
+          <div>
+            <h3>Machine Learning Intern <span class="at">@</span> <span class="org">Feynn Labs</span></h3>
+            <p class="job-sub">Internship</p>
+            <ul>
+              <li>Developed a Python chatbot (<strong>85% accuracy</strong>) with NLP pipelines for intent classification and dialogue management.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================== RESEARCH ============================== -->
+  <section class="section" id="research">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker mono">03 / research</p>
+        <h2>Research, teaching &amp; publications</h2>
+      </header>
+      <div class="cards-2">
+        <div class="card">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span>
+          <h3>Insect flight tracking</h3>
+          <p class="meta"><span>Lund Vision Group · Lund University</span><span class="tag tag-live">ongoing</span></p>
+          <p>Computer-vision-based 3D keypoint tracking and 3D flight-path estimation for insects, including multi-kilohertz wing tracking with event cameras and sensor fusion. <a href="#insect-tracking">See the project</a>.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-present"/></svg></span>
+          <h3>Computer vision workshop</h3>
+          <p class="meta"><span>Lund University</span></p>
+          <p>Hosted and taught a computer vision workshop for ML students, covering image fundamentals, practical pipelines and real-world applications.</p>
+        </div>
+      </div>
+
+      <div class="subhead"><h3>Publications</h3></div>
+      <ol class="pubs">
+        <li>
+          <div>
+            <a href="https://ieeexplore.ieee.org/document/10170486" target="_blank" rel="noopener">An Intelligent Computer Vision based Application for Student Monitoring in Classroom<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="venue">IEEE Xplore · computer vision</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="https://ieeexplore.ieee.org/document/10179723" target="_blank" rel="noopener">Deep Learning-based Segmentation and Computer Vision-based Ultrasound Imagery Techniques<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="venue">IEEE Xplore · medical imaging</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="https://ieeexplore.ieee.org/document/10837068" target="_blank" rel="noopener">Smart Farming Solutions for Crop Disease Prediction and Control using IoT and Machine Learning<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="venue">IEEE Xplore · IoT &amp; machine learning</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================== SKILLS ============================== -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker mono">04 / skills</p>
+        <h2>Skills &amp; tools</h2>
+      </header>
+      <div class="skills">
+        <div class="skill-group" data-only="all vision">
+          <h3>Computer vision <span class="tag tag-vision">vision</span></h3>
+          <ul class="chips">
+            <li>Object detection (YOLO)</li><li>Classification (ResNet, VGG)</li><li>Segmentation</li><li>OCR pipelines</li><li>Image restoration</li><li>Super-resolution</li><li>Pose estimation (SLEAP, 3D)</li><li>Behavior recognition</li><li>Event-based vision</li><li>Multi-camera systems</li><li>3D reconstruction</li>
+          </ul>
+        </div>
+        <div class="skill-group" data-only="all llm">
+          <h3>LLMs &amp; NLP <span class="tag tag-llm">llm</span></h3>
+          <ul class="chips">
+            <li>RAG</li><li>Text-to-SQL</li><li>Prompt engineering</li><li>Structured extraction</li><li>Summarization</li><li>Output-schema design</li><li>Hugging Face</li><li>Intent classification</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>ML foundations</h3>
+          <ul class="chips">
+            <li>Supervised &amp; unsupervised learning</li><li>Transfer learning</li><li>Fine-tuning</li><li>Hyperparameter tuning</li><li>Feature engineering</li><li>Evaluation (SSIM, MSE)</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Languages, tools &amp; platforms</h3>
+          <ul class="chips">
+            <li>Python</li><li>SQL</li><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li><li>Linux</li><li>Git</li><li>Google Cloud</li><li>Azure ML</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== EDUCATION ============================== -->
+  <section class="section" id="education">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker mono">05 / education</p>
+        <h2>Education &amp; certifications</h2>
+      </header>
+      <div class="edu">
+        <div class="card">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></span>
+          <p class="when">Sep 2025 – 2027 (expected)</p>
+          <h3>Master of Science in Machine Learning Systems and Control</h3>
+          <p class="school">Lund University · Faculty of Engineering (LTH)</p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></span>
+          <p class="when">Undergraduate</p>
+          <h3>Bachelor of Technology, Electronics and Communication Engineering</h3>
+          <p class="school">SRM Institute of Science and Technology, India</p>
+        </div>
+      </div>
+      <ul class="certs">
+        <li>Amazon ML Summer School<span>Intensive programme · 2022</span></li>
+        <li>Meta Database Engineer<span>Coursera</span></li>
+        <li>Algorithms Specialization<span>Stanford</span></li>
+        <li>Data Science &amp; Machine Learning<span>HarvardX · edX</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== CONTACT ============================== -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <p class="kicker mono">06 / contact</p>
+        <h2>Let's talk</h2>
+        <p class="contact-text">Hiring for computer vision, LLM or ML engineering work, or have a thesis or research project in mind? I'm based in Lund and would be glad to hear from you.</p>
+        <div class="email-row">
+          <a class="email-addr" href="mailto:pamulapati06@gmail.com">pamulapati06@gmail.com</a>
+          <button type="button" class="copy" data-copy="pamulapati06@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:pamulapati06@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/satish-chandra-pamulapati" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          <a class="btn" href="https://github.com/Sati01" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+          <a class="btn btn-ghost" data-only="all vision" href="assets/cv/Satish_Chandra_Pamulapati_CV_Computer_Vision.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span data-only="all">CV · Vision</span><span data-only="vision">Download CV</span></a>
+          <a class="btn btn-ghost" data-only="all llm" href="assets/cv/Satish_Chandra_Pamulapati_CV_ML_LLM.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span data-only="all">CV · ML &amp; LLM</span><span data-only="llm">Download CV</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 Satish Chandra Pamulapati · Lund, Sweden</span>
+    <span><a href="https://www.linkedin.com/in/satish-chandra-pamulapati" target="_blank" rel="noopener">linkedin</a> · <a href="https://github.com/Sati01" target="_blank" rel="noopener">github</a> · updated nov 2026</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
